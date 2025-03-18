@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexagon AI – Giải pháp Tư vấn và Sáng tạo Nội dung đột phá</title>
+    <meta name="description" content="Hexagon AI - Đơn vị tư vấn và đồng hành cùng doanh nghiệp trong hành trình chuyển đổi số toàn diện, kết hợp công nghệ AI tiên tiến và kinh nghiệm chuyên sâu.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/ai-illustration.svg">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#10B981',
+                        accent: '#6366F1',
+                        dark: '#1F2937'
+                    },
+                    fontFamily: {
+                        vietnam: ['Be Vietnam Pro', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #2563EB 0%, #6366F1 100%);
+        }
+        .hero-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .menu-item {
+            @apply font-vietnam text-dark hover:text-primary transition-colors font-medium;
+        }
+        .menu-item.active {
+            @apply text-primary;
+        }
+        .mobile-menu-button {
+            @apply block md:hidden p-3 text-dark hover:text-primary transition-colors rounded-lg hover:bg-gray-100;
+        }
+        .mobile-menu-button i {
+            @apply text-2xl;
+        }
+        .mobile-menu-item {
+            @apply px-4 py-2 hover:bg-gray-50 rounded-lg;
+        }
+        .service-card {
+            @apply bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all group;
+        }
+        .service-icon {
+            @apply text-primary mb-6 group-hover:scale-110 transition-transform;
+        }
+        .wow-factor-card {
+            @apply bg-white rounded-xl p-8 group hover:shadow-lg transition-all;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="/" class="flex items-center">
+                    <span class="text-2xl font-vietnam font-bold text-primary">
+                        Hexagon<span class="text-accent">AI</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="menu-item active">Trang chủ</a>
+                    <a href="/about.html" class="menu-item">Giới thiệu</a>
+                    <a href="/services.html" class="menu-item">Dịch vụ</a>
+                    <a href="/projects.html" class="menu-item">Dự án</a>
+                    <a href="/blog.html" class="menu-item">Blog</a>
+                    <a href="/contact.html" 
+                       class="bg-primary text-white px-6 py-3 rounded-full font-vietnam font-medium hover:bg-accent transition-colors flex items-center">
+                        <i class="fas fa-headset mr-2"></i>
+                        Liên hệ ngay
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden py-4 border-t border-gray-100">
+                <div class="flex flex-col space-y-4">
+                    <a href="/" class="menu-item active mobile-menu-item">Trang chủ</a>
+                    <a href="/about.html" class="menu-item mobile-menu-item">Giới thiệu</a>
+                    <a href="/services.html" class="menu-item mobile-menu-item">Dịch vụ</a>
+                    <a href="/projects.html" class="menu-item mobile-menu-item">Dự án</a>
+                    <a href="/blog.html" class="menu-item mobile-menu-item">Blog</a>
+                    <a href="/contact.html" 
+                       class="bg-primary text-white px-6 py-3 rounded-full font-vietnam font-medium hover:bg-accent transition-colors text-center flex items-center justify-center mx-4">
+                        <i class="fas fa-headset mr-2"></i>
+                        Liên hệ ngay
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg pt-32 pb-20">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h1 class="font-vietnam text-4xl md:text-5xl font-bold leading-tight mb-4">
+                        Khai phá tiềm năng doanh nghiệp với sức mạnh AI
+                    </h1>
+                    <p class="text-xl mb-4 opacity-90 font-vietnam">
+                        Sáng tạo không giới hạn. Hiệu quả vượt trội.
+                    </p>
+                    <p class="text-lg mb-8 opacity-90">
+                        Giải pháp tư vấn và sáng tạo nội dung đột phá với sự hỗ trợ của công nghệ AI
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="/services.html" class="bg-white text-primary px-8 py-3 rounded-full font-vietnam font-semibold hover:bg-gray-100 transition-colors text-center flex items-center justify-center">
+                            <i class="fas fa-rocket mr-2"></i>
+                            Khám phá dịch vụ
+                        </a>
+                        <a href="/contact.html" class="border-2 border-white text-white px-8 py-3 rounded-full font-vietnam font-semibold hover:bg-white hover:text-primary transition-colors text-center flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Nhận tư vấn miễn phí
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <img src="assets/images/ai-illustration.svg" alt="AI Innovation" class="w-full hero-animation">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="font-vietnam text-3xl md:text-4xl font-bold text-dark mb-6">
+                    Hexagon AI: Đối tác tin cậy cho sự phát triển của bạn
+                </h2>
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    Trong kỷ nguyên số, Hexagon AI mang đến giải pháp toàn diện kết hợp giữa trí tuệ nhân tạo tiên tiến và kinh nghiệm tư vấn chuyên sâu. Chúng tôi giúp doanh nghiệp vừa và nhỏ (SME) tại Việt Nam tối ưu hóa hoạt động, đưa ra quyết định thông minh dựa trên dữ liệu, và tạo ra nội dung hấp dẫn, thu hút khách hàng.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-vietnam text-3xl md:text-4xl font-bold text-dark mb-4">
+                    Dịch vụ AI hàng đầu cho doanh nghiệp của bạn
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-bar text-4xl"></i>
+                    </div>
+                    <h3 class="font-vietnam text-xl font-semibold mb-4">
+                        Báo cáo Phân tích Doanh nghiệp
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        Đánh giá toàn diện sức khỏe doanh nghiệp, phân tích SWOT, dự báo tài chính và đề xuất chiến lược hành động hiệu quả.
+                    </p>
+                    <a href="/services.html" class="text-primary font-vietnam font-semibold hover:text-accent transition-colors inline-flex items-center group-hover:translate-x-2 transition-transform">
+                        Tìm hiểu thêm
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullseye text-4xl"></i>
+                    </div>
+                    <h3 class="font-vietnam text-xl font-semibold mb-4">
+                        Nghiên cứu và Định vị Thương hiệu AI
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        Phân tích thị trường, đối thủ, khách hàng mục tiêu bằng AI để xây dựng thương hiệu mạnh mẽ và khác biệt.
+                    </p>
+                    <a href="/services.html" class="text-primary font-vietnam font-semibold hover:text-accent transition-colors inline-flex items-center group-hover:translate-x-2 transition-transform">
+                        Tìm hiểu thêm
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pen-fancy text-4xl"></i>
+                    </div>
+                    <h3 class="font-vietnam text-xl font-semibold mb-4">
+                        Sáng tạo Nội dung thông minh
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        Tạo nội dung đa dạng, độc đáo và hấp dẫn với sự hỗ trợ của AI, giúp bạn tiết kiệm thời gian và nguồn lực.
+                    </p>
+                    <a href="/services.html" class="text-primary font-vietnam font-semibold hover:text-accent transition-colors inline-flex items-center group-hover:translate-x-2 transition-transform">
+                        Tìm hiểu thêm
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WOW Factors Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-vietnam text-3xl md:text-4xl font-bold text-dark mb-4">
+                    Điều gì khiến Hexagon AI khác biệt?
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Factor 1 -->
+                <div class="wow-factor-card">
+                    <div class="text-primary mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-user-check text-4xl"></i>
+                    </div>
+                    <h3 class="font-vietnam text-xl font-semibold mb-4">Cá nhân hóa</h3>
+                    <p class="text-gray-600">
+                        Báo cáo và chiến lược được thiết kế riêng cho mô hình kinh doanh và thị trường của bạn.
+                    </p>
+                </div>
+
+                <!-- Factor 2 -->
+                <div class="wow-factor-card">
+                    <div class="text-primary mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-calendar-check text-4xl"></i>
+                    </div>
+                    <h3 class="font-vietnam text-xl font-semibold mb-4">Kế hoạch 90 ngày</h3>
+                    <p class="text-gray-600">
+                        Nhận ngay kế hoạch hành động chi tiết, dễ thực hiện trong vòng 90 ngày.
+                    </p>
+                </div>
+
+                <!-- Factor 3 -->
+                <div class="wow-factor-card">
+                    <div class="text-primary mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-chart-line text-4xl"></i>
+                    </div>
+                    <h3 class="font-vietnam text-xl font-semibold mb-4">Dữ liệu & Phân tích sâu sắc</h3>
+                    <p class="text-gray-600">
+                        Đưa ra quyết định dựa trên dữ liệu chính xác và phân tích chuyên sâu từ AI.
+                    </p>
+                </div>
+
+                <!-- Factor 4 -->
+                <div class="wow-factor-card">
+                    <div class="text-primary mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-clock text-4xl"></i>
+                    </div>
+                    <h3 class="font-vietnam text-xl font-semibold mb-4">Tiết kiệm thời gian & chi phí</h3>
+                    <p class="text-gray-600">
+                        Tối ưu hóa quy trình và nguồn lực với sự hỗ trợ của công nghệ AI.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="bg-primary rounded-2xl p-12 text-center">
+                <h2 class="font-vietnam text-3xl md:text-4xl font-bold text-white mb-6">
+                    Bạn đã sẵn sàng để bứt phá?
+                </h2>
+                <p class="text-white text-lg mb-8 opacity-90 max-w-2xl mx-auto">
+                    Liên hệ với chúng tôi ngay hôm nay để khám phá cách Hexagon AI có thể giúp doanh nghiệp của bạn đạt được những thành công mới.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="/contact.html" class="bg-white text-primary px-8 py-3 rounded-full font-vietnam font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Liên hệ ngay
+                    </a>
+                    <a href="/services.html" class="border-2 border-white text-white px-8 py-3 rounded-full font-vietnam font-semibold hover:bg-white hover:text-primary transition-colors flex items-center justify-center">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        Tìm hiểu thêm
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-12 md:col-span-3">
+                    <h3 class="font-vietnam text-2xl font-bold mb-4">Hexagon<span class="text-accent">AI</span></h3>
+                    <div class="bg-gray-800/50 rounded-lg p-4 mb-6">
+                        <div class="text-gray-400">
+                            <div class="flex items-start mb-3">
+                                <i class="fas fa-building mt-1 mr-2"></i>
+                                <div>
+                                    <strong class="text-white">HEXAGON CONSULTING</strong><br/>
+                                    MST: 0110624346
+                                </div>
+                            </div>
+                            <a href="https://hexagon.ai.vn" class="hover:text-white transition-colors flex items-center">
+                                <i class="fas fa-globe mr-2"></i>
+                                hexagon.ai.vn
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Đối tác tin cậy trong hành trình phát triển của doanh nghiệp Việt Nam
+                    </p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="text-gray-400 hover:text-white hover:bg-primary/50 transition-all bg-gray-800/50 w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white hover:bg-primary/50 transition-all bg-gray-800/50 w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white hover:bg-primary/50 transition-all bg-gray-800/50 w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-span-6 md:col-span-2">
+                    <h4 class="font-vietnam font-semibold mb-4">Liên Kết Nhanh</h4>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="/about.html" class="text-gray-400 hover:text-white transition-colors flex items-center group">
+                                <i class="fas fa-chevron-right text-sm mr-2 group-hover:translate-x-1 transition-transform"></i>
+                                Giới thiệu
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/services.html" class="text-gray-400 hover:text-white transition-colors flex items-center group">
+                                <i class="fas fa-chevron-right text-sm mr-2 group-hover:translate-x-1 transition-transform"></i>
+                                Dịch vụ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/projects.html" class="text-gray-400 hover:text-white transition-colors flex items-center group">
+                                <i class="fas fa-chevron-right text-sm mr-2 group-hover:translate-x-1 transition-transform"></i>
+                                Dự án
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/blog.html" class="text-gray-400 hover:text-white transition-colors flex items-center group">
+                                <i class="fas fa-chevron-right text-sm mr-2 group-hover:translate-x-1 transition-transform"></i>
+                                Blog
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="col-span-6 md:col-span-3">
+                    <h4 class="font-vietnam font-semibold mb-4">Dịch Vụ</h4>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="/services.html#analytics" class="text-gray-400 hover:text-white transition-colors flex items-center group">
+                                <i class="fas fa-chart-bar mr-2"></i>
+                                Báo cáo Phân tích Doanh nghiệp
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/services.html#branding" class="text-gray-400 hover:text-white transition-colors flex items-center group">
+                                <i class="fas fa-bullseye mr-2"></i>
+                                Nghiên cứu và Định vị Thương hiệu AI
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/services.html#content" class="text-gray-400 hover:text-white transition-colors flex items-center group">
+                                <i class="fas fa-pen-fancy mr-2"></i>
+                                Sáng tạo Nội dung thông minh
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="col-span-12 md:col-span-4">
+                    <h4 class="font-vietnam font-semibold mb-4">Văn Phòng</h4>
+                    <div class="space-y-4">
+                        <!-- Vietnam Office -->
+                        <div class="bg-gray-800/50 rounded-lg p-4 hover:bg-gray-800/70 transition-colors group">
+                            <div class="text-gray-400">
+                                <div class="flex items-start mb-3">
+                                    <i class="fas fa-building mt-1 mr-2"></i>
+                                    <div>
+                                        <strong class="text-white">HEXAGON CONSULTING</strong><br/>
+                                        <span class="text-sm">MST: 0110624346</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start mb-3">
+                                    <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                                    <div>
+                                        <strong class="text-white">Việt Nam:</strong><br/>
+                                        S24 H6 StarLake, Bắc Từ Liêm, Hà Nội
+                                    </div>
+                                </div>
+                                <div class="ml-6 space-y-2">
+                                    <a href="tel:0904522460" class="hover:text-white transition-colors flex items-center group-hover:translate-x-1 transition-transform">
+                                        <i class="fas fa-phone mr-2"></i>
+                                        0904522460
+                                    </a>
+                                    <a href="mailto:cskh@hexagon.ai.vn" class="hover:text-white transition-colors flex items-center group-hover:translate-x-1 transition-transform">
+                                        <i class="fas fa-envelope mr-2"></i>
+                                        cskh@hexagon.ai.vn
+                                    </a>
+                                    <a href="https://hexagon.ai.vn" class="hover:text-white transition-colors flex items-center group-hover:translate-x-1 transition-transform">
+                                        <i class="fas fa-globe mr-2"></i>
+                                        hexagon.ai.vn
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Portugal Office -->
+                        <div class="bg-gray-800/50 rounded-lg p-4 hover:bg-gray-800/70 transition-colors">
+                            <div class="text-gray-400 flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                                <div>
+                                    <strong class="text-white">Portugal:</strong><br/>
+                                    Rua Filipe Folque 2, 2o andar,<br/>
+                                    1050-110 Lisbon
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 HEXAGON CONSULTING. Tất cả quyền được bảo lưu.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle with animation
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = mobileMenuButton.querySelector('i');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // Toggle menu icon
+            menuIcon.classList.toggle('fa-bars');
+            menuIcon.classList.toggle('fa-times');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.add('fa-bars');
+                menuIcon.classList.remove('fa-times');
+            }
+        });
+    </script>
+</body>
+</html>
