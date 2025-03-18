@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Hexagon AI</title>
+    <meta name="description" content="Khám phá các bài viết, tin tức và kiến thức về AI, tư vấn doanh nghiệp và xu hướng công nghệ mới nhất">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#10B981',
+                        accent: '#6366F1',
+                        dark: '#1F2937'
+                    },
+                    fontFamily: {
+                        vietnam: ['Be Vietnam Pro', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #2563EB 0%, #6366F1 100%);
+        }
+        .blog-card {
+            transition: transform 0.3s ease;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl font-vietnam font-bold text-primary">
+                        Hexagon<span class="text-accent">AI</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="font-vietnam text-dark hover:text-primary transition-colors">Trang chủ</a>
+                    <a href="/about.html" class="font-vietnam text-dark hover:text-primary transition-colors">Giới thiệu</a>
+                    <a href="/services.html" class="font-vietnam text-dark hover:text-primary transition-colors">Dịch vụ</a>
+                    <a href="/projects.html" class="font-vietnam text-dark hover:text-primary transition-colors">Dự án</a>
+                    <a href="/blog.html" class="font-vietnam text-primary">Blog</a>
+                    <a href="/contact.html" class="font-vietnam bg-primary text-white px-6 py-2 rounded-full hover:bg-accent transition-colors">Liên hệ</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-dark hover:text-primary">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="/" class="font-vietnam text-dark hover:text-primary transition-colors">Trang chủ</a>
+                    <a href="/about.html" class="font-vietnam text-dark hover:text-primary transition-colors">Giới thiệu</a>
+                    <a href="/services.html" class="font-vietnam text-dark hover:text-primary transition-colors">Dịch vụ</a>
+                    <a href="/projects.html" class="font-vietnam text-dark hover:text-primary transition-colors">Dự án</a>
+                    <a href="/blog.html" class="font-vietnam text-primary">Blog</a>
+                    <a href="/contact.html" class="font-vietnam bg-primary text-white px-6 py-2 rounded-full hover:bg-accent transition-colors inline-block text-center">Liên hệ</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg pt-32 pb-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="font-vietnam text-4xl md:text-5xl font-bold text-white mb-6">
+                Blog & Tin Tức
+            </h1>
+            <p class="text-white text-lg md:text-xl max-w-3xl mx-auto opacity-90">
+                Cập nhật tin tức, xu hướng và kiến thức mới nhất về AI và chuyển đổi số
+            </p>
+        </div>
+    </section>
+
+    <!-- Featured Articles -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-vietnam text-3xl font-bold text-dark mb-4">
+                    Bài Viết Nổi Bật
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Những bài viết được độc giả quan tâm nhiều nhất
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Featured Article 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden blog-card">
+                    <img src="https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg" alt="AI Trends" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm">Xu hướng AI</span>
+                            <span class="text-gray-500 ml-4">15 Tháng 3, 2024</span>
+                        </div>
+                        <h3 class="font-vietnam text-2xl font-semibold mb-4">
+                            5 Xu Hướng AI Định Hình Tương Lai Doanh Nghiệp 2024
+                        </h3>
+                        <p class="text-gray-600 mb-6">
+                            Khám phá những xu hướng AI mới nhất đang thay đổi cách doanh nghiệp vận hành và phát triển trong kỷ nguyên số.
+                        </p>
+                        <a href="#" class="text-primary font-vietnam font-semibold hover:text-accent transition-colors">
+                            Đọc thêm <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Featured Article 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden blog-card">
+                    <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg" alt="Digital Transformation" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm">Chuyển đổi số</span>
+                            <span class="text-gray-500 ml-4">10 Tháng 3, 2024</span>
+                        </div>
+                        <h3 class="font-vietnam text-2xl font-semibold mb-4">
+                            Chuyển Đổi Số: Từ Chiến Lược Đến Thực Thi
+                        </h3>
+                        <p class="text-gray-600 mb-6">
+                            Hướng dẫn toàn diện về cách triển khai chuyển đổi số hiệu quả trong doanh nghiệp Việt Nam.
+                        </p>
+                        <a href="#" class="text-primary font-vietnam font-semibold hover:text-accent transition-colors">
+                            Đọc thêm <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Articles -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-vietnam text-3xl font-bold text-dark mb-4">
+                    Bài Viết Mới Nhất
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Cập nhật những thông tin mới nhất về công nghệ và giải pháp AI
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg blog-card">
+                    <img src="https://images.pexels.com/photos/8386422/pexels-photo-8386422.jpeg" alt="AI Applications" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm">AI & Kinh doanh</span>
+                            <span class="text-gray-500 ml-4">8 Tháng 3, 2024</span>
+                        </div>
+                        <h3 class="font-vietnam text-xl font-semibold mb-4">
+                            Ứng Dụng AI Trong Phân Tích Khách Hàng
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Cách AI giúp doanh nghiệp hiểu sâu hơn về hành vi và nhu cầu khách hàng.
+                        </p>
+                        <a href="#" class="text-primary font-vietnam font-semibold hover:text-accent transition-colors">
+                            Đọc thêm <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg blog-card">
+                    <img src="https://images.pexels.com/photos/8386464/pexels-photo-8386464.jpeg" alt="Machine Learning" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm">Machine Learning</span>
+                            <span class="text-gray-500 ml-4">5 Tháng 3, 2024</span>
+                        </div>
+                        <h3 class="font-vietnam text-xl font-semibold mb-4">
+                            Machine Learning Trong Dự Báo Xu Hướng
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Khám phá cách ML giúp doanh nghiệp dự đoán và nắm bắt xu hướng thị trường.
+                        </p>
+                        <a href="#" class="text-primary font-vietnam font-semibold hover:text-accent transition-colors">
+                            Đọc thêm <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg blog-card">
+                    <img src="https://images.pexels.com/photos/8386470/pexels-photo-8386470.jpeg" alt="AI Ethics" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm">Đạo đức AI</span>
+                            <span class="text-gray-500 ml-4">1 Tháng 3, 2024</span>
+                        </div>
+                        <h3 class="font-vietnam text-xl font-semibold mb-4">
+                            Đạo Đức Trong Phát Triển AI
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Những nguyên tắc quan trọng trong việc phát triển và ứng dụng AI có trách nhiệm.
+                        </p>
+                        <a href="#" class="text-primary font-vietnam font-semibold hover:text-accent transition-colors">
+                            Đọc thêm <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button class="bg-primary text-white px-8 py-3 rounded-full font-vietnam font-semibold hover:bg-accent transition-colors">
+                    Xem thêm bài viết
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-vietnam text-3xl font-bold text-dark mb-4">
+                    Chủ Đề
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Khám phá các bài viết theo chủ đề bạn quan tâm
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Category 1 -->
+                <a href="#" class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="text-primary mb-4">
+                        <i class="fas fa-brain text-4xl"></i>
+                    </div>
+                    <h3 class="font-vietnam text-xl font-semibold mb-2">AI & Machine Learning</h3>
+                    <p class="text-gray-600">25 bài viết</p>
+                </a>
+
+                <!-- Category 2 -->
+                <a href="#" class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="text-primary mb-4">
+                        <i class="fas fa-chart-line text-4xl"></i>
+                    </div>
+                    <h3 class="font-vietnam text-xl font-semibold mb-2">Phân Tích Dữ Liệu</h3>
+                    <p class="text-gray-600">18 bài viết</p>
+                </a>
+
+                <!-- Category 3 -->
+                <a href="#" class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="text-primary mb-4">
+                        <i class="fas fa-digital-tachograph text-4xl"></i>
+                    </div>
+                    <h3 class="font-vietnam text-xl font-semibold mb-2">Chuyển Đổi Số</h3>
+                    <p class="text-gray-600">22 bài viết</p>
+                </a>
+
+                <!-- Category 4 -->
+                <a href="#" class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="text-primary mb-4">
+                        <i class="fas fa-shield-alt text-4xl"></i>
+                    </div>
+                    <h3 class="font-vietnam text-xl font-semibold mb-2">Bảo Mật & AI</h3>
+                    <p class="text-gray-600">15 bài viết</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="bg-white rounded-2xl p-12">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="font-vietnam text-3xl font-bold text-dark mb-4">
+                        Đăng Ký Nhận Tin
+                    </h2>
+                    <p class="text-gray-600 mb-8">
+                        Nhận các bài viết mới nhất và thông tin hữu ích về AI và chuyển đổi số
+                    </p>
+                    <form class="flex gap-4">
+                        <input type="email" placeholder="Nhập email của bạn" class="flex-1 px-6 py-3 rounded-full border focus:outline-none focus:border-primary">
+                        <button type="submit" class="bg-primary text-white px-8 py-3 rounded-full font-vietnam font-semibold hover:bg-accent transition-colors">
+                            Đăng ký
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-2 md:col-span-1">
+                    <h3 class="font-vietnam text-2xl font-bold mb-4">Hexagon<span class="text-accent">AI</span></h3>
+                    <p class="text-gray-400 mb-4">
+                        Nền tảng tư vấn và sáng tạo nội dung hàng đầu dựa trên AI
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-vietnam font-semibold mb-4">Liên Kết Nhanh</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/about.html" class="text-gray-400 hover:text-white transition-colors">Giới thiệu</a></li>
+                        <li><a href="/services.html" class="text-gray-400 hover:text-white transition-colors">Dịch vụ</a></li>
+                        <li><a href="/projects.html" class="text-gray-400 hover:text-white transition-colors">Dự án</a></li>
+                        <li><a href="/blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-vietnam font-semibold mb-4">Dịch Vụ</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/services.html" class="text-gray-400 hover:text-white transition-colors">Báo cáo BASIC</a></li>
+                        <li><a href="/services.html" class="text-gray-400 hover:text-white transition-colors">Báo cáo PRO</a></li>
+                        <li><a href="/services.html" class="text-gray-400 hover:text-white transition-colors">AI PREMIUM</a></li>
+                        <li><a href="/services.html" class="text-gray-400 hover:text-white transition-colors">Đào tạo AI</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-vietnam font-semibold mb-4">Liên Hệ</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            123 Đường ABC, Quận 1, TP.HCM
+                        </li>
+                        <li class="text-gray-400">
+                            <i class="fas fa-phone mr-2"></i>
+                            +84 123 456 789
+                        </li>
+                        <li class="text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i>
+                            contact@hexagonai.vn
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 HexagonAI. Tất cả quyền được bảo lưu.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
