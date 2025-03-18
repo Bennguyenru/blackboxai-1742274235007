@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background hexagon pattern -->
+    <defs>
+        <pattern id="hexagonPattern" width="60" height="52" patternUnits="userSpaceOnUse">
+            <path fill="none" stroke="#6366F1" stroke-width="1" stroke-opacity="0.2"
+                d="M30 0 L45 13 L45 39 L30 52 L15 39 L15 13 Z" />
+        </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#hexagonPattern)" />
+
+    <!-- Central hexagon group -->
+    <g transform="translate(400,300)">
+        <!-- Main hexagon -->
+        <path fill="#2563EB" fill-opacity="0.9"
+            d="M0,-100 L86.6,-50 L86.6,50 L0,100 L-86.6,50 L-86.6,-50 Z">
+            <animate attributeName="fill-opacity" values="0.9;0.7;0.9" dur="3s" repeatCount="indefinite" />
+        </path>
+        
+        <!-- Orbiting circles representing AI nodes -->
+        <circle r="15" fill="#6366F1">
+            <animateMotion dur="4s" repeatCount="indefinite"
+                path="M0,-150 A150,150 0 1,1 0,-150 A150,150 0 1,1 0,-150" />
+        </circle>
+        
+        <circle r="12" fill="#10B981">
+            <animateMotion dur="3s" repeatCount="indefinite"
+                path="M0,-120 A120,120 0 1,1 0,-120 A120,120 0 1,1 0,-120" />
+        </circle>
+        
+        <circle r="10" fill="#6366F1">
+            <animateMotion dur="5s" repeatCount="indefinite"
+                path="M0,-180 A180,180 0 1,1 0,-180 A180,180 0 1,1 0,-180" />
+        </circle>
+    </g>
+
+    <!-- Connection lines -->
+    <g stroke="#6366F1" stroke-width="2" stroke-opacity="0.5">
+        <line x1="300" y1="250" x2="500" y2="350">
+            <animate attributeName="stroke-opacity" values="0.5;0.2;0.5" dur="2s" repeatCount="indefinite" />
+        </line>
+        <line x1="500" y1="250" x2="300" y2="350">
+            <animate attributeName="stroke-opacity" values="0.5;0.2;0.5" dur="2.5s" repeatCount="indefinite" />
+        </line>
+    </g>
+
+    <!-- Small decorative hexagons -->
+    <g fill="#2563EB" fill-opacity="0.3">
+        <path d="M100,100 L115,108 L115,124 L100,132 L85,124 L85,108 Z" />
+        <path d="M700,500 L715,508 L715,524 L700,532 L685,524 L685,508 Z" />
+        <path d="M200,450 L215,458 L215,474 L200,482 L185,474 L185,458 Z" />
+    </g>
+</svg>
